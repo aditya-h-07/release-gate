@@ -1,0 +1,24 @@
+
+name: TDS GA7 Release Gate
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: TDS identity: 23f2004697@ds.study.iitm.ac.in
+        run: echo "Hello, world!"
+
+      - name: Verify workflow
+        run: python -c "print('GitHub Actions workflow passed')"
